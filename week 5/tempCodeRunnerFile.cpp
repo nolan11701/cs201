@@ -1,0 +1,1 @@
+            cout << maze[i][j];
