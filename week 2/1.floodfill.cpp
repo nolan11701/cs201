@@ -19,7 +19,7 @@ bool CanFill(int rowNew, int colNew)
     if (visited[rowNew][colNew]){
         return false;
     }
-    if (maze[rowNew][colNew]){
+    if (maze[rowNew][colNew]==1){
         return false;
     }
     return true;

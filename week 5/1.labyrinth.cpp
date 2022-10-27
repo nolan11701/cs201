@@ -17,16 +17,16 @@ int path_count = 0;
 void floodfill(int x, int y, int step_count) {
     if (x < 0 || y < 0 || x >= n || y >= n || visited[x][y] || maze[x][y] == 1)
         return;
-    
-    if ((x == x2 ) && (y == y2))  // reach end point
+
+    if ((x == x2) && (y == y2))  // reach end point
     {
         found_path = true;
-        if (best_path > step_count){
+        if (best_path > step_count) {
             best_path = step_count;
             path_count = 1;
         } else if (best_path == step_count) {
             path_count++;
-        } 
+        }
         return;
     }
     visited[x][y] = 1;
@@ -37,23 +37,21 @@ void floodfill(int x, int y, int step_count) {
     floodfill(x, y - 1, step_count);
     visited[x][y] = 0;
     step_count -= 1;
-    
 }
 
 int main() {
     cin >> n;
     x1 = 0;
     y1 = 0;
-    x2 = n-1;
-    y2 = n-1;
+    x2 = n - 1;
+    y2 = n - 1;
 
-    for (int i=0;i<n;i++){
-        for (int j=0;j<n;j++){
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             cin >> maze[i][j];
         }
     }
 
     floodfill(0, 0, 1);
     cout << path_count << "\n" << best_path;
-    
 }

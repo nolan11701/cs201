@@ -11,7 +11,7 @@ int n;
 int x1, y1;
 int x2, y2;
 
-int best_path = 99;
+int best_path = 999;
 void floodfill(int x, int y, int step_count) {
     if (x < 0 || y < 0 || x >= n || y >= n || visited[x][y] || maze[x][y] == 1)
         return;

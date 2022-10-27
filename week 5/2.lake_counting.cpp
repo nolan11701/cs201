@@ -9,7 +9,7 @@ int visited[100][100];
 int n, m;
 
 void floodfill(int x, int y) {
-    if (x < 0 || y < 0 || x >= n || y >= n || visited[x][y] || maze[x][y] == 0)
+    if (x < 0 || y < 0 || x >= n || y >= n || visited[x][y]==1 || maze[x][y] == 0)
         return;
     
     visited[x][y] = 1;
